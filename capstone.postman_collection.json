@@ -1,0 +1,84 @@
+{
+  "info": {
+    "name": "Capstone Backend",
+    "_postman_id": "12345678-90ab-cdef-1234-567890abcdef",
+    "description": "API collection for Supabase + MobSF backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Check Backend",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "Add Log",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/add-log?source=Backend&type=Test&severity=Info&message=HelloWorld",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["add-log"],
+          "query": [
+            { "key": "source", "value": "Backend" },
+            { "key": "type", "value": "Test" },
+            { "key": "severity", "value": "Info" },
+            { "key": "message", "value": "HelloWorld" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Logs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/get-logs",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["get-logs"]
+        }
+      }
+    },
+    {
+      "name": "Analyze APK",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "multipart/form-data" }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/path/to/your/app.apk"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/analyze-apk/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["analyze-apk", ""]
+        }
+      }
+    }
+  ]
+}
